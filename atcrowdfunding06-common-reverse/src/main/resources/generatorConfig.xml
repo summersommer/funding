@@ -1,3 +1,5 @@
+
+<!--有很多需要改的，包括 库 表 密码 各种名字-->
 <!DOCTYPE generatorConfiguration
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
