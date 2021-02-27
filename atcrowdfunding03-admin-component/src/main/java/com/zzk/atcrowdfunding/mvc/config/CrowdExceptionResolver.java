@@ -28,11 +28,11 @@ public class CrowdExceptionResolver {
         return commonResolve(viewName, exception, request, response);
     }
 
-    @ExceptionHandler(LoginFailedException.class)
+    @ExceptionHandler(value=LoginFailedException.class)
     public ModelAndView resolverLoginFailedException(LoginFailedException exception, HttpServletRequest request, HttpServletResponse response) throws IOException {
         String viewName = "admin-login";
-        ModelAndView modelAndView = commonResolve(viewName,exception,request,response);
-        return modelAndView;
+
+        return commonResolve(viewName,exception,request,response);
     }
 
     // @ExceptionHandler将一个具体的异常类型和一个方法关联起来
