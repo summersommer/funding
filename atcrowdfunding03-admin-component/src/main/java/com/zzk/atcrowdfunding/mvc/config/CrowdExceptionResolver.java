@@ -2,6 +2,7 @@ package com.zzk.atcrowdfunding.mvc.config;
 
 import com.google.gson.Gson;
 import com.zzk.atcrowdfunding.constant.CrowdConstant;
+import com.zzk.atcrowdfunding.exception.LoginFailedException;
 import com.zzk.atcrowdfunding.util.CrowdUtil;
 import com.zzk.atcrowdfunding.util.ResultEntity;
 import org.springframework.ui.Model;
@@ -15,7 +16,7 @@ import java.io.IOException;
 
 /**
  * @author zzk
- * @create 2020-03-25 9:28
+ * @create 2021-2-27
  */
 @ControllerAdvice
 public class CrowdExceptionResolver {
@@ -25,6 +26,13 @@ public class CrowdExceptionResolver {
                                                     HttpServletResponse response) throws IOException {
         String viewName = "system-error";
         return commonResolve(viewName, exception, request, response);
+    }
+
+    @ExceptionHandler(LoginFailedException.class)
+    public ModelAndView resolverLoginFailedException(LoginFailedException exception, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String viewName = "admin-login";
+        ModelAndView modelAndView = commonResolve(viewName,exception,request,response);
+        return modelAndView;
     }
 
     // @ExceptionHandler将一个具体的异常类型和一个方法关联起来
