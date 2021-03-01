@@ -1,5 +1,7 @@
 package com.zzk.atcrowdfunding.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.zzk.atcrowdfunding.constant.CrowdConstant;
 import com.zzk.atcrowdfunding.entity.Admin;
 import com.zzk.atcrowdfunding.entity.AdminExample;
@@ -55,4 +57,16 @@ public class AdminServiceImpl implements AdminService {
         return admin;
 
     }
+    @Override
+    public PageInfo<Admin> getPageInfo(String keyword, Integer pageNum, Integer pageSize) {
+
+        // 1.调用PageHeloer的静态方法
+        // 非侵入式设计，原本的查询不必有任何修改
+        PageHelper.startPage(pageNum,pageSize);
+        // 2.执行查询
+        List<Admin> list = adminMapper.selectAdminKeyword(keyword);
+        // 3.封装到PageInfo对象中
+        return new PageInfo<>(list);
+    }
+
 }

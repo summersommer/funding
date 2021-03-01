@@ -20,7 +20,7 @@
             num_display_entries: 5, //主体页数
             callback: pageselectCallback,
             items_per_page:${requestScope.pageInfo.pageSize}, //每页显示1项
-            current_page: ${requestScope.pageInfo.pageNum - 1},//Pagination内部使用pageIndex来管理页面
+            current_page: ${requestScope.pageInfo.pageNum - 1},//Pagination内部使用pageIndex来管理页面, 从零开始
             prev_text:"上一页",
             next_text:"下一页"
         }
@@ -29,6 +29,7 @@
 
     }
     //pageIndex 0-
+    //回调函数是给系统或者框架调用的
     function pageselectCallback(pageIndex,jQuery) {
         //根据pageIndex计算pageNum
         var pageNum = pageIndex+1;

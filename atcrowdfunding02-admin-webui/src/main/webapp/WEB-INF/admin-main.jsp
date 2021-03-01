@@ -1,27 +1,47 @@
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2020/5/8
+  Time: 19:37
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 
-       <html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keys" content="">
-    <meta name="author" content="">
-    <base href="http://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/"/>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/login.css">
-    <script src="jquery/jquery-2.1.1.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-</head>
+<html lang="zh_CN">
+<%@include file="/WEB-INF/include-head.jsp"%>
 
-        <body>
-        <h1>show admin main</h1>
-        ${sessionScope.loginAdmin.userName}
-        <li><a href="/admin/do/logout.html"><i
-            class="glyphicon glyphicon-off"></i退出系统</a><li>
-        </body>
-       </html>
+
+<body>
+
+<%@include file="/WEB-INF/include-nav.jsp"%>
+<div class="container-fluid">
+    <div class="row">
+        <%@include file="/WEB-INF/include-sidebar.jsp"%>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">控制面板</h1>
+            <div class="row placeholders">
+
+                <%--<div class="col-xs-6 col-sm-3 placeholder">--%>
+                    <%--<img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">--%>
+                    <%--<h4>Label</h4>--%>
+                    <%--<span class="text-muted">Something else</span>--%>
+                <%--</div>--%>
+                <%--<div class="col-xs-6 col-sm-3 placeholder">--%>
+                    <%--<img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">--%>
+                    <%--<h4>Label</h4>--%>
+                    <%--<span class="text-muted">Something else</span>--%>
+                <%--</div>--%>
+                <%--<div class="col-xs-6 col-sm-3 placeholder">--%>
+                    <%--<img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">--%>
+                    <%--<h4>Label</h4>--%>
+                    <%--<span class="text-muted">Something else</span>--%>
+                <%--</div>--%>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

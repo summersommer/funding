@@ -1,1 +1,2 @@
 com\zzk\atcrowdfunding\mvc\handler\AdminHandler.class
+com\zzk\atcrowdfunding\mvc\interceptor\LoginInterceptor.class
