@@ -17,6 +17,13 @@ public class AdminHandler {
     @Autowired
     private AdminService adminService;
 
+    @RequestMapping("/admin/do/logout.html")
+    public String doLogout(HttpSession session){
+        //强制session失效
+        session.invalidate();
+        return "redirect:/admin/to/login/page.html";
+    }
+
     @RequestMapping("/admin/to/login/page.html")
 
     public String doLogin(//default value
@@ -27,7 +34,7 @@ public class AdminHandler {
         System.out.println(loginAcct);
         Admin admin=adminService.getAdminByLoginAcct(loginAcct,userPswd);
         session.setAttribute(CrowdConstant.ATTR_NAME_LOGIN_ADMIN,admin);
-        return "admin-main";
+        return "redirect:/admin/to/main/page.html";
 
 
     }
