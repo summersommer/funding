@@ -21,7 +21,7 @@
         <body>
         <h1>show admin main</h1>
         ${sessionScope.loginAdmin.userName}
-        <li><a href="/admin/to/login/page.html"><i
+        <li><a href="/admin/do/logout.html"><i
             class="glyphicon glyphicon-off"></i退出系统</a><li>
         </body>
        </html>
