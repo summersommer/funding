@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface RoleMapper {
+    List<Role> selectRoleBykeyword(String keyword);
     int countByExample(RoleExample example);
 
     int deleteByExample(RoleExample example);
@@ -28,4 +29,8 @@ public interface RoleMapper {
     int updateByPrimaryKeySelective(Role record);
 
     int updateByPrimaryKey(Role record);
+
+    List<Role> selectAssignedRole(Integer adminId);
+
+    List<Role> selectUnAssignedRole(Integer adminId);
 }

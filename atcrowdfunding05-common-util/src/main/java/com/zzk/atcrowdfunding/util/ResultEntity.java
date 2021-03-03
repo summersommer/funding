@@ -27,7 +27,7 @@ public class ResultEntity<T> {
 	public static <Type> ResultEntity<Type> successWithoutData() {
 		return new ResultEntity<Type>(SUCCESS, null, null);
 	}
-	
+
 	/**
 	 * 请求处理成功且需要返回数据时使用的工具方法
 	 * @param data 要返回的数据
@@ -85,5 +85,6 @@ public class ResultEntity<T> {
 	public void setData(T data) {
 		this.data = data;
 	}
+
 
 }

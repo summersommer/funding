@@ -10,10 +10,11 @@ import java.util.List;
  * @Date 2021/3/3
  */
 public interface RoleService {
+    PageInfo<Role> getPageInfo(Integer pageNum,Integer pageSize,String keyword);
 
+    void saveRole(Role role);
 
-
-
-
+    void updateRole(Role role);
+    void remove(List<Integer> roleIdList);
 
 }
