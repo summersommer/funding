@@ -19,6 +19,7 @@ public class AdminHandler {
 
     @Autowired
     private AdminService adminService;
+
     @RequestMapping("/admin/get/page.html")
     public String getPageInfo(
             // 配置默认值
@@ -31,6 +32,7 @@ public class AdminHandler {
         modelMap.addAttribute(CrowdConstant.ATTR_NAME_PAGE_INFO,pageInfo);
         return "admin-page";
     }
+
     @RequestMapping("/admin/do/logout.html")
     public String doLogout(HttpSession session){
         //强制session失效
@@ -39,7 +41,6 @@ public class AdminHandler {
     }
 
     @RequestMapping("/admin/to/login/page.html")
-
     public String doLogin(//default value
                           @RequestParam(value="loginAcct",defaultValue = "sommer") String loginAcct,
                           @RequestParam(value="userPswd",defaultValue = "xx") String userPswd,
@@ -65,5 +66,34 @@ public class AdminHandler {
         //forword：重复删除
         return "redirect:/admin/get/page.html?pageNum="+pageNum+"&keyword="+keyword;
     }
+
+    @RequestMapping("/admin/save.html")
+    public String save(Admin admin){
+        adminService.saveAdmin(admin);
+        return "redirect:/admin/get/page.html?pageNum="+Integer.MAX_VALUE;//能够第一时间看到新增的
+    }
+
+    @RequestMapping("/admin/to/edit/page.html")
+    public String edit(@RequestParam("adminId") Integer adminId,
+                       @RequestParam("pageNum") Integer pageNum,
+                       @RequestParam("keyword") String keyword,
+                       ModelMap modelMap
+    ){
+
+        Admin admin=adminService.getAdminById(adminId);
+        modelMap.addAttribute("admin",admin);
+        return "admin-edit";
+    }
+
+    @RequestMapping("/admin/update.html")
+    public String update(//@RequestParam("adminId") Integer adminId,
+                         @RequestParam("pageNum") Integer pageNum,
+                         @RequestParam("keyword") String keyword,
+                         Admin admin
+    ){
+        adminService.update(admin);
+        return "redirect:/admin/get/page.html?pageNum="+pageNum+"&keyword="+keyword;
+    }
+
 }
 

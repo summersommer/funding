@@ -31,10 +31,7 @@
                                 <label for="exampleInputPassword1">登陆账号</label>
                                 <input name="loginAcct" value="${requestScope.admin.loginAcct}" type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入登陆账号">
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">登陆密码</label>
-                                <input name="userPswd" value="${requestScope.admin.userPswd}" type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入登陆密码">
-                            </div>
+
                             <div class="form-group">
                                 <label for="exampleInputPassword1">用户昵称</label>
                                 <input name="userName" value="${requestScope.admin.userName}" type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入用户名称">

@@ -2,6 +2,8 @@ package com.zzk.atcrowdfunding.mvc.config;
 
 import com.google.gson.Gson;
 import com.zzk.atcrowdfunding.constant.CrowdConstant;
+import com.zzk.atcrowdfunding.exception.LoginAcctAlreadyUseException;
+import com.zzk.atcrowdfunding.exception.LoginAcctAlreadyUseForUpdateException;
 import com.zzk.atcrowdfunding.exception.LoginFailedException;
 import com.zzk.atcrowdfunding.util.CrowdUtil;
 import com.zzk.atcrowdfunding.util.ResultEntity;
@@ -26,6 +28,26 @@ public class CrowdExceptionResolver {
                                                     HttpServletResponse response) throws IOException {
         String viewName = "system-error";
         return commonResolve(viewName, exception, request, response);
+    }
+    @ExceptionHandler(value = LoginAcctAlreadyUseException.class)
+    public ModelAndView LoginAcctAlreadyInUseException(
+            LoginAcctAlreadyUseException exception,
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) throws IOException {
+        String viewName = "admin-add";
+        ModelAndView modelAndView = commonResolve(viewName,exception,request,response);
+        return modelAndView;
+    }
+    @ExceptionHandler(value = LoginAcctAlreadyUseForUpdateException.class)
+    public ModelAndView LoginAcctAlreadyInUseForUpdateException(
+            LoginAcctAlreadyUseForUpdateException exception,
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) throws IOException {
+        String viewName = "system-error";//避免回到修改页面需要带数据回显的麻烦
+        ModelAndView modelAndView = commonResolve(viewName,exception,request,response);
+        return modelAndView;
     }
 
     @ExceptionHandler(value=LoginFailedException.class)

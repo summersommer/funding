@@ -5,15 +5,22 @@ import com.github.pagehelper.PageInfo;
 import com.zzk.atcrowdfunding.constant.CrowdConstant;
 import com.zzk.atcrowdfunding.entity.Admin;
 import com.zzk.atcrowdfunding.entity.AdminExample;
+import com.zzk.atcrowdfunding.exception.LoginAcctAlreadyUseException;
+import com.zzk.atcrowdfunding.exception.LoginAcctAlreadyUseForUpdateException;
 import com.zzk.atcrowdfunding.exception.LoginFailedException;
 import com.zzk.atcrowdfunding.mapper.AdminMapper;
 import com.zzk.atcrowdfunding.service.api.AdminService;
 import com.zzk.atcrowdfunding.util.CrowdUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Objects;
+import java.util.Date;
 
 /**
  * @author zzk
@@ -23,9 +30,28 @@ import java.util.Objects;
 public class AdminServiceImpl implements AdminService {
     @Autowired
     private AdminMapper adminMapper;
-
+    private Logger logger= LoggerFactory.getLogger(AdminServiceImpl.class);
     public void saveAdmin(Admin admin) {
-        adminMapper.insert(admin);
+        String userPswd = admin.getUserPswd();
+
+        userPswd = CrowdUtil.md5(userPswd);
+
+        admin.setUserPswd(userPswd);
+        Date date = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String format1 = format.format(date);
+        admin.setCreateTime(format1);
+        try {
+            adminMapper.insert(admin);
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.info("异常全类名="+e.getClass().getName());
+            if (e instanceof DuplicateKeyException){
+                throw new LoginAcctAlreadyUseException(CrowdConstant.MESSAGE_LOGIN_ALREADY_USE);
+            }
+        }
+
+
     }
 
     public List<Admin> getAll() {
@@ -74,4 +100,23 @@ public class AdminServiceImpl implements AdminService {
         adminMapper.deleteByPrimaryKey(adminId);
     }
 
+    @Override
+    public Admin getAdminById(Integer adminId) {
+        Admin admin = adminMapper.selectByPrimaryKey(adminId);
+        return admin;
+    }
+    @Override
+    public void update(Admin admin) {
+        //表示有选择的更新，null不更新
+        try {
+            adminMapper.updateByPrimaryKeySelective(admin);
+        } catch (Exception e) {
+
+            e.printStackTrace();
+            logger.info("异常全类名="+e.getClass().getName());
+            if (e instanceof DuplicateKeyException){
+                throw new LoginAcctAlreadyUseForUpdateException(CrowdConstant.MESSAGE_LOGIN_ALREADY_USE);
+            }
+        }
+    }
 }
