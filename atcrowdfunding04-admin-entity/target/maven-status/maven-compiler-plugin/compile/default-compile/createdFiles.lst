@@ -1,5 +1,10 @@
 com\zzk\atcrowdfunding\entity\RoleExample$GeneratedCriteria.class
+com\zzk\atcrowdfunding\entity\MenuExample$GeneratedCriteria.class
+com\zzk\atcrowdfunding\entity\Menu.class
+com\zzk\atcrowdfunding\entity\MenuExample$Criterion.class
 com\zzk\atcrowdfunding\entity\RoleExample$Criterion.class
+com\zzk\atcrowdfunding\entity\MenuExample.class
+com\zzk\atcrowdfunding\entity\MenuExample$Criteria.class
 com\zzk\atcrowdfunding\entity\RoleExample.class
 com\zzk\atcrowdfunding\entity\Role.class
 com\zzk\atcrowdfunding\entity\RoleExample$Criteria.class
