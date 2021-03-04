@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface AdminService {
     void saveAdmin(Admin admin);
-
+    void saveAdminRoleRelationship(Integer adminId, List<Integer> roleIdList);
     List<Admin> getAll();
     void update(Admin admin);
     Admin getAdminByLoginAcct(String loginAcct, String userPswd);

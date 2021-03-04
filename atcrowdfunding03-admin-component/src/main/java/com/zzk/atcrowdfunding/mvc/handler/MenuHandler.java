@@ -19,26 +19,26 @@ import java.util.Map;
  * @Author Administrator
  * @Date 2020/5/12
  */
- @Controller
-//@RestController
+ //@Controller
+@RestController//@Controller+@ResponseBody
 public class MenuHandler {
     @Autowired
     private MenuService menuService;
-    @ResponseBody
+    //@ResponseBody
     @RequestMapping("/menu/save.json")
     public ResultEntity<String> saveMenu(Menu menu){
         menuService.saveMenu(menu);
         return ResultEntity.successWithoutData();
     }
 
-    @ResponseBody
+   // @ResponseBody
     @RequestMapping("/menu/update.json")//.json不重要
     public ResultEntity<Menu> updateMenu(Menu menu) throws InterruptedException{
 
         menuService.updateMenu(menu);
         return ResultEntity.successWithoutData();
     }
-    @ResponseBody
+    //@ResponseBody
     @RequestMapping("menu/remove.json")//.json不重要
     public ResultEntity<Menu> removeMenu(@RequestParam("id") Integer id) throws InterruptedException{
 
@@ -46,7 +46,7 @@ public class MenuHandler {
         return ResultEntity.successWithoutData();
     }
 
-    @ResponseBody
+    //@ResponseBody
     @RequestMapping("/menu/get/whole/tree.json")
     public ResultEntity<Menu> getWholeTreeNew() {
         // 1.查询全部的 Menu 对象

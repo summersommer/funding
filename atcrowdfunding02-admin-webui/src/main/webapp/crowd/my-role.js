@@ -2,7 +2,7 @@
 function fillAuthTree() {
     // 1.发送 Ajax 请求查询 Auth 数据
     var ajaxReturn = $.ajax({
-        "url":"assgin/get/all/auth.json",
+        "url":"assign/get/all/auth.json",
         "type":"post",
         "dataType":"json",
         "async":false

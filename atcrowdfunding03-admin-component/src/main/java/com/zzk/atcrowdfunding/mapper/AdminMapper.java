@@ -27,6 +27,11 @@ public interface AdminMapper {
     int updateByExample(@Param("record") Admin record, @Param("example") AdminExample example);
 
     int updateByPrimaryKeySelective(Admin record);
+    
 
     int updateByPrimaryKey(Admin record);
+
+    void deleteRelationship(Integer adminId);
+
+    void insertNewRelationship(@Param("adminId")Integer adminId,@Param("roleIdList") List<Integer> roleIdList);
 }

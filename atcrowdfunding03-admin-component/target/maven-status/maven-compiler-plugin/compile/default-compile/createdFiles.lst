@@ -1,10 +1,14 @@
 com\zzk\atcrowdfunding\mvc\handler\MenuHandler.class
+com\zzk\atcrowdfunding\service\impl\AuthServiceImpl.class
 com\zzk\atcrowdfunding\mapper\RoleMapper.class
+com\zzk\atcrowdfunding\mvc\handler\AssignHandler.class
 com\zzk\atcrowdfunding\service\impl\RoleServiceImpl.class
 com\zzk\atcrowdfunding\mvc\handler\AdminHandler.class
 com\zzk\atcrowdfunding\mvc\interceptor\LoginInterceptor.class
 com\zzk\atcrowdfunding\mapper\MenuMapper.class
 com\zzk\atcrowdfunding\service\api\RoleService.class
 com\zzk\atcrowdfunding\mvc\handler\RoleHandler.class
+com\zzk\atcrowdfunding\mapper\AuthMapper.class
+com\zzk\atcrowdfunding\service\api\AuthService.class
 com\zzk\atcrowdfunding\service\api\MenuService.class
 com\zzk\atcrowdfunding\service\impl\MenuServiceImpl.class

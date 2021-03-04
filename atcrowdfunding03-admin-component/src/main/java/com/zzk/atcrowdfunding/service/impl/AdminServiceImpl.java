@@ -119,4 +119,12 @@ public class AdminServiceImpl implements AdminService {
             }
         }
     }
+    @Override
+    public void saveAdminRoleRelationship(Integer adminId, List<Integer> roleIdList) {
+        //删除旧数据，再加新数据
+        adminMapper.deleteRelationship(adminId);
+        if (roleIdList!=null&&roleIdList.size()>0){
+
+            adminMapper.insertNewRelationship(adminId,roleIdList);
+        }    }
 }
