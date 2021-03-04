@@ -16,4 +16,5 @@ public interface MenuService {
     void updateMenu(Menu menu);
 
     void removeMenu(Integer id);
+
 }

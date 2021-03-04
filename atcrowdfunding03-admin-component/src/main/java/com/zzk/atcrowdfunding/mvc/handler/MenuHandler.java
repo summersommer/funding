@@ -24,6 +24,27 @@ import java.util.Map;
 public class MenuHandler {
     @Autowired
     private MenuService menuService;
+    @ResponseBody
+    @RequestMapping("/menu/save.json")
+    public ResultEntity<String> saveMenu(Menu menu){
+        menuService.saveMenu(menu);
+        return ResultEntity.successWithoutData();
+    }
+
+    @ResponseBody
+    @RequestMapping("/menu/update.json")//.json不重要
+    public ResultEntity<Menu> updateMenu(Menu menu) throws InterruptedException{
+
+        menuService.updateMenu(menu);
+        return ResultEntity.successWithoutData();
+    }
+    @ResponseBody
+    @RequestMapping("menu/remove.json")//.json不重要
+    public ResultEntity<Menu> removeMenu(@RequestParam("id") Integer id) throws InterruptedException{
+
+        menuService.removeMenu(id);
+        return ResultEntity.successWithoutData();
+    }
 
     @ResponseBody
     @RequestMapping("/menu/get/whole/tree.json")
