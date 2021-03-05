@@ -64,5 +64,23 @@ public class AssignHandler {
         List<Auth> authList=authService.getAll();
         return ResultEntity.successWithData(authList);
     }
+    @ResponseBody
+    @RequestMapping("/assign/get/assigned/auth/id/by/role/id.json")
+    public ResultEntity<List<Integer>> getAssignedAuthIdByRoleId(
+            @RequestParam("roleId") Integer roleId
+    ){
+        List<Integer> authIdList=authService.getAssignedAuthIdByRoleId(roleId);
+        return ResultEntity.successWithData(authIdList);
+    }
+
+    @ResponseBody
+    @RequestMapping("/assign/do/role/assign/auth.json")
+    public ResultEntity<List<Integer>> saveRoleAuthRelationship(
+            @RequestBody Map<String,List<Integer>> map
+    ){
+
+        authService.saveRoleAuthRelationship(map);
+        return ResultEntity.successWithoutData();
+    }
 
 }
