@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
@@ -29,12 +30,14 @@ import java.util.Date;
 @Service
 public class AdminServiceImpl implements AdminService {
     @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+    @Autowired
     private AdminMapper adminMapper;
     private Logger logger= LoggerFactory.getLogger(AdminServiceImpl.class);
     public void saveAdmin(Admin admin) {
         String userPswd = admin.getUserPswd();
-
-        userPswd = CrowdUtil.md5(userPswd);
+        userPswd = passwordEncoder.encode(userPswd);
+        //userPswd = CrowdUtil.md5(userPswd);
 
         admin.setUserPswd(userPswd);
         Date date = new Date();

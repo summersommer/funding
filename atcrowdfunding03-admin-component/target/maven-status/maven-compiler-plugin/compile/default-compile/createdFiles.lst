@@ -13,6 +13,7 @@ com\zzk\atcrowdfunding\mvc\handler\AdminHandler.class
 com\zzk\atcrowdfunding\mvc\config\SecurityAdmin.class
 org\springframework\security\taglibs\authz\AbstractAuthorizeTag$1.class
 com\zzk\atcrowdfunding\mapper\MenuMapper.class
+com\zzk\atcrowdfunding\mvc\config\WebAppSecurityConfig$1.class
 com\zzk\atcrowdfunding\service\api\RoleService.class
 org\springframework\web\filter\DelegatingFilterProxy.class
 com\zzk\atcrowdfunding\mvc\handler\RoleHandler.class

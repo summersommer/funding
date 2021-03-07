@@ -25,14 +25,16 @@ import java.io.IOException;
 public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
-    @Bean
-    public BCryptPasswordEncoder getPasswordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
+//    @Bean
+//    public BCryptPasswordEncoder getPasswordEncoder(){
+//        return new BCryptPasswordEncoder();
+//    }
+@Autowired
+private BCryptPasswordEncoder passwordEncoder;
     @Override
     protected void configure(AuthenticationManagerBuilder builder) throws Exception {
         /*builder.inMemoryAuthentication().withUser("tom").password("123123").roles("ADMIN");*/
-        builder.userDetailsService(userDetailsService);
+        builder.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
     }
 
     @Override
@@ -41,19 +43,19 @@ public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/to/login/page.html", "/bootstrap/**", "/crowd/**", "/css/**", "/fonts/**", "/img/**", "/jquery/**", " /layer/**", "/script/**", "/ztree/**")
                 .permitAll()
                 .antMatchers("/admin/get/page.html")
-                .hasRole("经理")
+                .hasRole("PM - 项目经理")
                 .anyRequest()
                 .authenticated()
                 .and()
                 .exceptionHandling()
-                //.accessDeniedPage("/to/no/auth/page.html")
-//                .accessDeniedHandler(new AccessDeniedHandler() {
-//                    @Override
-//                    public void handle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AccessDeniedException e) throws IOException, ServletException {
-//                        httpServletRequest.setAttribute("message", CrowdConstant.MESSAGE_LOGIN_DENIED);
-//                        httpServletRequest.getRequestDispatcher("/WEB-INF/system-error.jsp").forward(httpServletRequest, httpServletResponse);
-//                    }
-//                })
+               // .accessDeniedPage("/to/no/auth/page.html")
+                .accessDeniedHandler(new AccessDeniedHandler() {
+                    @Override
+                    public void handle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AccessDeniedException e) throws IOException, ServletException {
+                        httpServletRequest.setAttribute("exception",new Exception( CrowdConstant.MESSAGE_LOGIN_DENIED));
+                        httpServletRequest.getRequestDispatcher("/WEB-INF/system-error.jsp").forward(httpServletRequest, httpServletResponse);
+                    }
+                })
                 .and()
                 .csrf()
                 .disable()

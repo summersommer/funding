@@ -6,7 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%--security标签库--%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -21,7 +22,9 @@
                             <i class="glyphicon glyphicon-user"></i>
                             ${sessionScope.loginAdmin.userName}
                             <%--无法访问,被erase了--%>
-
+                            <%--Gredentials:<security:authentication property="credentials.class.name"/>--%>
+                            <%--Principal是自己封装的SecurityAdmin--%>
+                            <security:authentication property="principal.orignaAdmin.userName"/>
                             <span
                                 class="caret"></span>
                         </button>

@@ -5,13 +5,15 @@ import com.zzk.atcrowdfunding.constant.CrowdConstant;
 import com.zzk.atcrowdfunding.entity.Admin;
 import com.zzk.atcrowdfunding.service.api.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.security.access.prepost.PreAuthorize;
+//sxx
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 @Controller
@@ -66,7 +68,7 @@ public class AdminHandler {
         //forword：重复删除
         return "redirect:/admin/get/page.html?pageNum="+pageNum+"&keyword="+keyword;
     }
-
+    @PreAuthorize("hasAuthority('user:save')")
     @RequestMapping("/admin/save.html")
     public String save(Admin admin){
         adminService.saveAdmin(admin);

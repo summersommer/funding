@@ -12,5 +12,6 @@ public class CrowdConstant {
 	public static final String ATTR_NAME_LOGIN_ADMIN = "loginAdmin";
 	public static final String ATTR_NAME_PAGE_INFO = "pageInfo";
 	public static final String MESSAGE_LOGIN_ALREADY_USE = "用户名已经存在！";
+	public static final String MESSAGE_LOGIN_DENIED = "访问拒绝！";
 
 }
