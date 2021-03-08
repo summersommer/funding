@@ -4,8 +4,19 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../atcrowdfunding05-common-util/pom.xml" />
+        <option value="$PROJECT_DIR$/../atcrowdfunding06-common-reverse/pom.xml" />
+        <option value="$PROJECT_DIR$/../atcrowdfunding07memberparent/pom.xml" />
+        <option value="$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding16-member-zuulserver/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding13-member-projectServer-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding14-member-order-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding15-member-payServer-consumer/pom.xml" />
+      </set>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

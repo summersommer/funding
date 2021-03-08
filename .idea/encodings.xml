@@ -7,9 +7,27 @@
     <file url="file://$PROJECT_DIR$/atcrowdfunding03-admin-component/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/atcrowdfunding04-admin-entity/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/atcrowdfunding04-admin-entity/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/atcrowdfunding05-common-util/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/atcrowdfunding05-common-util/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/atcrowdfunding06-common-reverse/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/atcrowdfunding06-common-reverse/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding05-common-util/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding05-common-util/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding06-common-reverse/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding06-common-reverse/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding08-member-eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding08-member-eureka/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding09-member-entity/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding10-member-mysql-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding10-member-mysql-provider/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding11-member-redisserver-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding11-member-redisserver-provider/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding12-member-authenticationserver-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding12-member-authenticationserver-consumer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding13-member-projectServer-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding13-member-projectServer-consumer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding14-member-order-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding14-member-order-consumer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding15-member-payServer-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding15-member-payServer-consumer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding16-member-zuulserver/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding16-member-zuulserver/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../atcrowdfunding07memberparent/atcrowdfunding17-member-api/src/main/java" charset="UTF-8" />
   </component>
 </project>

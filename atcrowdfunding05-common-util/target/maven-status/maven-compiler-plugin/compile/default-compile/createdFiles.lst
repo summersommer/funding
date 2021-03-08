@@ -1,4 +1,0 @@
-com\zzk\atcrowdfunding\exception\LoginAcctAlreadyUseForUpdateException.class
-com\zzk\atcrowdfunding\exception\LoginAcctAlreadyUseException.class
-com\zzk\atcrowdfunding\exception\LoginFailedException.class
-com\zzk\atcrowdfunding\exception\AccessForbiddenException.class
